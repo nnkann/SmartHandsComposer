@@ -102,6 +102,10 @@ Utility node for creating grid layouts of hand reference images.
 2. **Phase 2 Estimation**: Uses wrist + MCP anchors from base pose
 3. **Basepose Fallback**: Direct use of base pose keypoints
 
+![Hand Detection Pipeline Demo](assets/hand-detection-demo.webp)
+
+*3-stage detection pipeline: MediaPipe keypoints (left) → Phase2 bone estimation (center) → Full skeleton integration (right)*
+
 ### Transform Pipeline
 
 ```
