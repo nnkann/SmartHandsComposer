@@ -50,6 +50,9 @@ venv.bak/
 # Visual Studio Code
 .vscode/
 
+# Claude Code
+.claude/
+
 # Sublime Text
 *.sublime-project
 *.sublime-workspace
