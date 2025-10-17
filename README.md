@@ -6,44 +6,38 @@ Replace hand poses in images using DWPose skeletons with automatic keypoint dete
 
 ## Features
 
-- **Automatic Hand Detection**: 3-stage detection pipeline (MediaPipe ’ Phase2 Estimation ’ Basepose fallback)
-- **Intelligent Flip Detection**: Arm direction-based flip logic using elbow’wrist vector analysis
+- **Automatic Hand Detection**: 3-stage detection pipeline (MediaPipe ï¿½ Phase2 Estimation ï¿½ Basepose fallback)
+- **Intelligent Flip Detection**: Arm direction-based flip logic using elbowï¿½wrist vector analysis
 - **Resolution-Independent Transforms**: Normalized coordinate space (0.0-1.0) for multi-resolution workflows
-- **Distance-Based Hand Sizing**: Accurate hand size calculation using wrist’MCP distance
+- **Distance-Based Hand Sizing**: Accurate hand size calculation using wristï¿½MCP distance
 - **DWPose Skeleton Output**: Colored bone connections with blue keypoint circles for VLM integration
 - **Full-Body Support**: Automatic detection and adjustment for full-body vs hand-only skeletons
 
 ## Installation
 
-### Prerequisites
-
-```bash
-pip install mediapipe opencv-python scipy
-```
-
-### ComfyUI Installation
-
 1. Clone to custom_nodes directory:
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/yourusername/ComfyUI-HandComposer.git
+git clone https://github.com/nnkann/SmartHandsComposer.git
 ```
 
 2. Restart ComfyUI
+
+**Note:** Dependencies (mediapipe, opencv-python, scipy) will be automatically installed by ComfyUI Manager when needed.
 
 ## Usage
 
 ### Basic Workflow
 
 ```
-DWPose Estimator ’ base_keypoints
-    “
-Load Image ’ base_image
-    “
-Hand Images ’ left_hand_image / right_hand_image
-    “
+DWPose Estimator ï¿½ base_keypoints
+    ï¿½
+Load Image ï¿½ base_image
+    ï¿½
+Hand Images ï¿½ left_hand_image / right_hand_image
+    ï¿½
 SmartHandsReplace Node
-    “
+    ï¿½
 Output: Image with replaced hand skeletons
 ```
 
@@ -67,13 +61,13 @@ Output: Image with replaced hand skeletons
 The skeleton output is optimized for Vision-Language Models like Qwen-VL:
 
 ```
-SmartHandsReplace ’ skeleton image
-    “
+SmartHandsReplace ï¿½ skeleton image
+    ï¿½
 Qwen Text Encoder
   image1: Original photo
   image2: Skeleton image (from SmartHandsReplace)
   prompt: "Replace the hands in image1 with the hand pose from image2. Each finger joint must align with the blue keypoints."
-    “
+    ï¿½
 Generate with Qwen
 ```
 
@@ -111,16 +105,16 @@ Utility node for creating grid layouts of hand reference images.
 ### Transform Pipeline
 
 ```
-Canvas Coordinates ’ Relative (0.0-1.0) ’ Flip ’ Rotate ’ Scale ’ Image Coordinates
+Canvas Coordinates ï¿½ Relative (0.0-1.0) ï¿½ Flip ï¿½ Rotate ï¿½ Scale ï¿½ Image Coordinates
 ```
 
 **Flip Detection:**
-- Compares arm direction (elbow’wrist) with hand direction (wrist’MCP)
+- Compares arm direction (elbowï¿½wrist) with hand direction (wristï¿½MCP)
 - Flips if vectors point in opposite horizontal directions
-- Angle adjustment: ¸ ’ (180° - ¸) when flipped
+- Angle adjustment: ï¿½ ï¿½ (180ï¿½ - ï¿½) when flipped
 
 **Hand Size Calculation:**
-- Distance-based method: (wrist’MCP distance × 6)²
+- Distance-based method: (wristï¿½MCP distance ï¿½ 6)ï¿½
 - 1.2x multiplier applied for visual accuracy
 - Handles full-body vs hand-only skeletons automatically
 
