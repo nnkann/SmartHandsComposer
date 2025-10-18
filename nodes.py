@@ -63,7 +63,7 @@ class ComposeMultipleImages:
 
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "compose"
-    CATEGORY = "image/Smart Hands Replace"
+    CATEGORY = "image/smart_hands"
 
     def compose(self, images, cell_size, padding, background_color, auto_canvas_size,
                 grid_columns=0, grid_rows=0, canvas_width=512, canvas_height=512):
@@ -189,7 +189,7 @@ class SmartHandsReplace:
 
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "combine"
-    CATEGORY = "image/Smart Hands Replace"
+    CATEGORY = "image/smart_hands"
 
     def combine(self, base_image, base_keypoints, left_hand_image, right_hand_image,
                 blend_strength, erase_expansion, line_thickness, enable_debug_logging):
