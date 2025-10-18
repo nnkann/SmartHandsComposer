@@ -1,0 +1,16 @@
+# Core dependencies for Smart Hands Replace
+# These will be automatically installed by ComfyUI Manager
+
+# Hand detection and pose estimation
+mediapipe>=0.10.0
+
+# Image processing
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Scientific computing
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Deep learning (usually provided by ComfyUI)
+torch>=2.0.0
