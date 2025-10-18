@@ -43,18 +43,38 @@ Output: Image with replaced hand skeletons
 
 ### Node: SmartHandsReplace
 
+![SmartHandsReplace Node](assets/SmartHandsReplace.png)
+
 **Inputs:**
 - `base_image`: Original image or photo (not skeleton visualization)
 - `base_keypoints`: DWPose POSE_KEYPOINT format
 - `left_hand_image`: Left hand reference image
 - `right_hand_image`: Right hand reference image
 - `blend_strength`: Blend factor (default: 1.0)
-- `erase_expansion`: Erase mask expansion in pixels (default: 10)
-- `line_thickness`: Skeleton line thickness (default: 2)
+- `erase_expansion`: Erase mask expansion in pixels (default: 4)
+- `line_thickness`: Skeleton line thickness (default: 4)
 - `enable_debug_logging`: Enable detailed logging (default: False)
 
 **Output:**
 - Skeleton image with transformed hand poses (colored lines + blue keypoint circles)
+
+**Important: Image Resolution Matching**
+
+All input images (`base_image`, `left_hand_image`, `right_hand_image`) must have matching canvas dimensions for proper keypoint alignment.
+
+**Recommended workflow:**
+1. Use a **Resize Image** node to normalize all images to **1024px** (width or height)
+2. Connect resized images to SmartHandsReplace inputs
+3. This ensures consistent coordinate space for hand detection and transformation
+
+Example workflow:
+```
+Load Image → Resize (1024px) → base_image
+Hand Image Left → Resize (1024px) → left_hand_image
+Hand Image Right → Resize (1024px) → right_hand_image
+```
+
+*Screenshot of resize workflow will be added here*
 
 ### Integration with Qwen VL Models
 
