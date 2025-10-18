@@ -41,6 +41,9 @@ SmartHandsReplace Node
 Output: Image with replaced hand skeletons
 ```
 
+**Example Workflows:**
+- [image_qwen_controlnet_custom_v2.json](image_qwen_controlnet_custom_v2.json) - Complete workflow with Qwen VL integration, DWPose, and hand replacement
+
 ### Node: SmartHandsReplace
 
 ![SmartHandsReplace Node](assets/SmartHandsReplace.png)
@@ -74,7 +77,9 @@ Hand Image Left → Resize (1024px) → left_hand_image
 Hand Image Right → Resize (1024px) → right_hand_image
 ```
 
-*Screenshot of resize workflow will be added here*
+![Resize Workflow Example](assets/imageResize.png)
+
+*Complete workflow showing Resize Image nodes normalizing all inputs to 1024px before connecting to SmartHandsReplace*
 
 ### Integration with Qwen VL Models
 
