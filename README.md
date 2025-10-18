@@ -42,7 +42,7 @@ Output: Image with replaced hand skeletons
 ```
 
 **Example Workflows:**
-- [image_qwen_controlnet_custom_v2.json](image_qwen_controlnet_custom_v2.json) - Complete workflow with Qwen VL integration, DWPose, and hand replacement
+- [image_qwen_controlnet_custom_v2.json](assets/image_qwen_controlnet_custom_v2.json) - Complete workflow with Qwen VL integration, DWPose, and hand replacement
 
 ### Node: SmartHandsReplace
 
