@@ -934,10 +934,10 @@ class SmartHandsReplace:
 # --- Node Mappings ---
 NODE_CLASS_MAPPINGS = {
     "ComposeMultipleImages": ComposeMultipleImages,
-    "SmartHandsReplace": SmartHandsReplace,
+    "Smart Hands Replace": SmartHandsReplace,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "ComposeMultipleImages": "Compose Multiple Images (Grid)",
-    "SmartHandsReplace": "Smart Hands Replace",
+    "Smart Hands Replace": "Smart Hands Replace",
 }
