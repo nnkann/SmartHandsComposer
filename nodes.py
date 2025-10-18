@@ -181,8 +181,8 @@ class SmartHandsReplace:
                 "left_hand_image": ("IMAGE",),
                 "right_hand_image": ("IMAGE",),
                 "blend_strength": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.05}),
-                "erase_expansion": ("INT", {"default": 10, "min": 0, "max": 50}),
-                "line_thickness": ("INT", {"default": 2, "min": 1, "max": 10}),
+                "erase_expansion": ("INT", {"default": 4, "min": 0, "max": 50}),
+                "line_thickness": ("INT", {"default": 4, "min": 1, "max": 10}),
                 "enable_debug_logging": ("BOOLEAN", {"default": False}),
             }
         }
@@ -934,10 +934,10 @@ class SmartHandsReplace:
 # --- Node Mappings ---
 NODE_CLASS_MAPPINGS = {
     "ComposeMultipleImages": ComposeMultipleImages,
-    "Smart Hands Replace": SmartHandsReplace,
+    "SmartHandsReplace": SmartHandsReplace,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "ComposeMultipleImages": "Compose Multiple Images (Grid)",
-    "Smart Hands Replace": "Smart Hands Replace",
+    "SmartHandsReplace": "Smart Hands Replace",
 }
