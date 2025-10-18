@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes, development challenges, and solutions for ComfyUI-HandComposer.
+All notable changes, development challenges, and solutions for Smart Hands Replace.
 
 ## [1.0.0] - 2025-01-XX
 

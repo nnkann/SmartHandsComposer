@@ -1,4 +1,4 @@
-# ComfyUI-HandComposer
+# Smart Hands Replace
 
 **Smart Hand Pose Replacement for ComfyUI**
 
