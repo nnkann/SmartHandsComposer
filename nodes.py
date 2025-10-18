@@ -17,14 +17,14 @@ try:
     MEDIAPIPE_AVAILABLE = True
 except ImportError:
     MEDIAPIPE_AVAILABLE = False
-    print("[HandComposer] MediaPipe not available. Install with: pip install mediapipe")
+    print("[Smart Hands Replace] MediaPipe not available. Install with: pip install mediapipe")
 
 try:
     from .hand_anatomy import HandEstimator
     HAND_ESTIMATOR_AVAILABLE = True
 except ImportError:
     HAND_ESTIMATOR_AVAILABLE = False
-    print("[HandComposer] HandEstimator not available")
+    print("[Smart Hands Replace] HandEstimator not available")
 # --------------------------
 
 # --- Constants ---
@@ -163,14 +163,14 @@ class SmartHandsReplace:
                     min_tracking_confidence=0.35
                 )
             except Exception as e:
-                print(f"[HandComposer] Failed to initialize MediaPipe: {e}")
+                print(f"[Smart Hands Replace] Failed to initialize MediaPipe: {e}")
 
         # Initialize Phase 2 estimator
         if HAND_ESTIMATOR_AVAILABLE:
             try:
                 self.hand_estimator = HandEstimator()
             except Exception as e:
-                print(f"[HandComposer] Failed to initialize HandEstimator: {e}")
+                print(f"[Smart Hands Replace] Failed to initialize HandEstimator: {e}")
 
     @classmethod
     def INPUT_TYPES(cls):
